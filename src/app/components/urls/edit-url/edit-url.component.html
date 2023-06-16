@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add New Url</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <form #form ="ngForm" (ngSubmit)="updateUrl()">
+                <div class="mb-3">
+                    <label for="idInput" class="form-label">ID</label>
+                    <input type="text" class="form-control" readonly
+                    id="idInput" name="id" [(ngModel)] = "url.id">
+                </div>
+                <div class="mb-3">
+                    <label for="urlInput" class="form-label">URL</label>
+                    <input type="url" class="form-control" 
+                    id="urlInput" name="url" [(ngModel)] = "url.url">
+                </div>
+                <div class="mb-3">
+                    <label for="shortInput" class="form-label">Short URL</label>
+                    <input type="text" class="form-control" 
+                    id="shortInput" name="short" [(ngModel)] = "url.short">
+                </div>
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label">Creator</label>
+                    <input type="text" class="form-control" 
+                    id="nameInput" name="name" [(ngModel)] = "url.user.username">
+                </div>
+                <div class="mb-3">
+                    <label for="dateInput" class="form-label">Creation Date</label>
+                    <input type="date" class="form-control" 
+                    id="dateInput" name="creationDate" [(ngModel)] = "url.creationDate">
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

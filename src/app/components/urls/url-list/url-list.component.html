@@ -1,0 +1,25 @@
+<div class="container my-5">
+    <h1 class="mb-3">Short URL List</h1>
+
+    <table class="table" *ngIf="urls && urls.length > 0">
+        <thead>
+            <tr>
+                <th>URL</th>
+                <th>Short URL</th>
+                <th>Creator</th>
+                <th>Creation Date</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let url of urls">
+                <td><a href="{{ url.url }}">{{ url.url }}</a></td>
+                <td><a href="{{ url.short }}">{{ url.short }}</a></td>
+                <td>{{ url.user.username }}</td>
+                <td>{{ url.creationDate }}</td>
+                <td><a [routerLink]="['/urls', 'edit', url.id]"></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!urls || urls.length <= 0">No URL Found</p>
+</div>
